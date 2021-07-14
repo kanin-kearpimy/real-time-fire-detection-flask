@@ -1,0 +1,17 @@
+venv/
+
+*.pyc
+__pycache__/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+flaskr/ML/model/*
+flask/statis/video/*
+
+dist/
+build/
+*.egg-info/
