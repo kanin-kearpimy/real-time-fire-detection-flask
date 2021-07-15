@@ -9,7 +9,7 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite')
     )
-    start_retinanet = Retinanet('firemodel_conveted.h5', 'resnet101', {0: 'fail'}, "flaskr/static/video/test-fire.mp4")
+    # start_retinanet = Retinanet('firemodel_conveted.h5', 'resnet101', {0: 'fail'}, "flaskr/static/video/test-fire.mp4")
 
     if(test_config == None):
         app.config.from_pyfile('config.py', silent=True)
@@ -27,7 +27,8 @@ def create_app(test_config=None):
     
     @app.route('/')
     def story():
-        return render_template('story.html')
+        return render_template('dashboard.html')
+        # return render_template('story.html')
 
     def gen_frames():  # generate frame by frame from camera
         # frame = ImageProcessing("flaskr/static/video/fire_video.mp4").start()
